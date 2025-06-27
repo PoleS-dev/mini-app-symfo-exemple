@@ -3,15 +3,15 @@
 	{% for produit in produits %}
 
 		<div class="border w-64 p-10 justify-center items-center bg-orange-200 m-10 ">
-
+          <a href="{{ path('produit_show', { id: produit.id }) }}">
 			{% if produit.img %}
 
-				<img class="w-full object-cover" src="{{ asset('images/product_image/' ~ produit.img) }}" alt="Image de {{ produit.nom }}">
+				<img class="w-full object-cover  hover:scale-110 transition-all duration-300" src="{{ asset('images/product_image/' ~ produit.img) }}" alt="Image de {{ produit.nom }}">
 
 			{% else %}
 				pas image
 			{% endif %}
-
+          </a>
 
 			<p>
 				<strong>Nom :</strong>

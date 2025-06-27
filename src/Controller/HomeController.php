@@ -197,6 +197,15 @@ if ($formType === 'search_nom') {
 
         
     }
+
+
+    #[Route('/produit/{id}', name: 'produit_show')]
+    public function showProduit(Produit $produit): Response
+    {
+        return $this->render('produit/show.html.twig', [
+            'produit' => $produit,
+        ]);
+    }
   
 
  
