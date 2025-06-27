@@ -2,8 +2,8 @@
 
 	{% for produit in produits %}
 
-		<div class="border w-64 p-10 justify-center items-center bg-orange-200 m-10 ">
-          <a href="{{ path('produit_show', { id: produit.id }) }}">
+		<div class="border relative w-64 p-10 justify-center items-center bg-orange-200 m-10 ">
+          <a class="img" href="{{ path('produit_show', { id: produit.id }) }}">
 			{% if produit.img %}
 
 				<img class="w-full object-cover  hover:scale-110 transition-all duration-300" src="{{ asset('images/product_image/' ~ produit.img) }}" alt="Image de {{ produit.nom }}">
@@ -12,6 +12,8 @@
 				pas image
 			{% endif %}
           </a>
+
+		  <div class=" modal absolute none top-2 left-48 p-2 mt-2 h-20 bg-amber-300 rounded-xl shadow-xl flex-col   " > ceci est un lien vers la page produit  de : {{ produit.nom }} </div>
 
 			<p>
 				<strong>Nom :</strong>

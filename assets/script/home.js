@@ -19,3 +19,22 @@ document.addEventListener('turbo:load', function () {
         }).mount();
     }
 });
+
+
+const imgs = document.querySelectorAll('.img');
+const modals=document.querySelectorAll('.modal');
+imgs.forEach(function (img, index) {
+    const modal = modals[index];
+    if (!modal) return; // sécurité au cas où
+
+    img.addEventListener('mouseenter', function () {
+        modal.style.display = 'block';
+        console.log('mouseenter');
+    });
+
+    img.addEventListener('mouseleave', function () {
+        modal.style.display = 'none';
+        console.log('mouseleave');
+    });
+});
+console.log('home5')
